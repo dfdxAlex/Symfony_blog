@@ -35,6 +35,9 @@ RUN set -eux; \
 ENV COMPOSER_ALLOW_SUPERUSER=1
 
 ###> recipes ###
+###> doctrine/doctrine-bundle ###
+RUN install-php-extensions pdo_pgsql
+###< doctrine/doctrine-bundle ###
 ###< recipes ###
 
 COPY --link frankenphp/conf.d/app.ini $PHP_INI_DIR/conf.d/
@@ -109,5 +112,3 @@ RUN composer require symfony/maker-bundle --dev
 #composer show twig/twig
 #проверить версию doctrine
 #composer show doctrine/orm
-
-
