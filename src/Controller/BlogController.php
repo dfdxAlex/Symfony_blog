@@ -30,15 +30,16 @@ class BlogController extends AbstractController
     #[Route('/user/{id}', name: 'user_id')]
     public function index_user($id)
     {
-        return new Response('
-            <h1>
-              Список статей пользователя:'.$id.'
-            </h1>
-            <h3>
-              Link:
-              '.$this->generateUrl('user_id', ['id' => $id]).'
-            </h3>
-        ');
+        // return new Response('
+        //     <h1>
+        //       Список статей пользователя:'.$id.'
+        //     </h1>
+        //     <h3>
+        //       Link:
+        //       '.$this->generateUrl('user_id', ['id' => $id]).'
+        //     </h3>
+        // ');
+        return $this->render('blog/NewsUser.html.twig');
     }
 
     #[Route('/toogleFollowStatus/{id}', name: 'toogleFollowStatus_id')]
