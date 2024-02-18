@@ -94,10 +94,28 @@ RUN apt-get update && apt-get install -y \
     git \
     unzip 
 
-# Установите make, если он еще не установлен
-RUN apt-get install -y make
+# Установите Composer
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-RUN composer require twig/twig
+# Установите MakerBundle
+RUN composer require symfony/maker-bundle --dev
+
+# RUN composer require symfony/orm-pack
+
+
+# RUN composer require twig/twig
+
+# # Установка Doctrine
+# RUN composer require symfony/orm-pack
 
 #docker compose build --no-cache
 #docker compose up --pull always -d --wait
+
+#проверить версию maker-bundle
+#composer show symfony/maker-bundle
+#проверить версию twig
+#composer show twig/twig
+#проверить версию doctrine
+#composer show doctrine/orm
+
+
