@@ -15,32 +15,34 @@ class BlogController extends AbstractController
     #[Route('/all', name: 'all_news')]
     public function index()
     {
-        // return new Response('
-        //     <h1>
-        //       Список всех статей:
-        //     </h1>
-        //     <h3>
-        //       Link:
-        //       '.$this->generateUrl('all_news').'
-        //     </h3>
-        // ');
         return $this->render('blog/AllNews.html.twig');
     }
 
     #[Route('/user/{id}', name: 'user_id')]
-    public function index_user($id)
+    public function indexUser($id)
     {
-        // return new Response('
-        //     <h1>
-        //       Список статей пользователя:'.$id.'
-        //     </h1>
-        //     <h3>
-        //       Link:
-        //       '.$this->generateUrl('user_id', ['id' => $id]).'
-        //     </h3>
-        // ');
-        return $this->render('blog/NewsUser.html.twig');
+        return $this->render('blog/NewsUser.html.twig', ['id'=>$id]);
     }
+
+    #[Route('/add/{id}', name: 'add_post')]
+    public function addPost($id)
+    {
+        return $this->render('blog/AddPost.html.twig', ['id'=>$id]);
+    }
+
+    #[Route('/edit/{id}', name: 'edit_post')]
+    public function editPost($id)
+    {
+        return $this->render('blog/EditPost.html.twig', ['id'=>$id]);
+    }
+
+    #[Route('/post/{id}', name: 'post_id')]
+    public function postId($id)
+    {
+        return $this->render('blog/PostId.html.twig', ['id'=>$id]);
+    }
+
+
 
     #[Route('/toogleFollowStatus/{id}', name: 'toogleFollowStatus_id')]
     public function indexToogleFollowStatus($id)
@@ -52,6 +54,20 @@ class BlogController extends AbstractController
             <h3>
               Link:
               '.$this->generateUrl('toogleFollowStatus_id', ['id' => $id]).'
+            </h3>
+        ');
+    }
+
+    #[Route('/delete/{id}', name: 'delete_id')]
+    public function deleteId($id)
+    {
+        return new Response('
+            <h1>
+              Удаление поста:'.$id.'
+            </h1>
+            <h3>
+              Link:
+              '.$this->generateUrl('delete_id', ['id' => $id]).'
             </h3>
         ');
     }
