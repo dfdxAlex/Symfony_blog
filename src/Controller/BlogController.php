@@ -12,8 +12,15 @@ use Symfony\Component\Routing\Attribute\Route;
  */
 class BlogController extends AbstractController
 {
+
+    #[Route('/', name: 'home')]
+    public function home()
+    {
+        return $this->render('blog/home.html.twig');
+    }
+
     #[Route('/all', name: 'all_news')]
-    public function index()
+    public function all()
     {
         return $this->render('blog/AllNews.html.twig');
     }
