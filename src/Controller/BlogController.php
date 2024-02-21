@@ -7,16 +7,14 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
-/**
- * php bin/console make:entity
- */
 class BlogController extends AbstractController
 {
 
-    #[Route('/', name: 'home')]
-    public function home()
+    #[Route('/', name: 'menu')]
+    public function menu()
     {
-        return $this->render('blog/home.html.twig');
+        return $this->render('blog/menu.html.twig');
+        // return $this->render('base.html.twig');
     }
 
     #[Route('/all', name: 'all_news')]
@@ -48,8 +46,6 @@ class BlogController extends AbstractController
     {
         return $this->render('blog/PostId.html.twig', ['id'=>$id]);
     }
-
-
 
     #[Route('/toogleFollowStatus/{id}', name: 'toogleFollowStatus_id')]
     public function indexToogleFollowStatus($id)
