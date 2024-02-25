@@ -3,6 +3,16 @@
 
   {% block body %}
 
+  {# Добавлен новый пост #}
+  <div class="flex justify-between m-auto w-3/4 text-blue-200 shadow-inner p-3 bg-blue-600">
+    <p>
+      <strong>Информация:
+      </strong>
+      <span>Новый пост опубликован</span>
+    </p>
+    <strong class="text-xl align-center cursor-pointer">&times;</strong>
+  </div>
+
   {# Header logo and name#}
   {# container - создать контейнер с центрированием по центру #}
   {# mx-auto - автоматически создавать отступы справа и слева #}
@@ -59,7 +69,7 @@
         {# flex-col items-center - выравнивание по горизонтали и вертикали #}
         {# py-8 mt-10 space-y-6 bg-white left-6 right-6 drop-shadow-lg - различные стили для контента#}
         {# hidden - вернуть в div #}
-        <div id="mobile-menu" class="hiden flex-col items-center py-8 mt-10 space-y-6 bg-white left-6 right-6 drop-shadow-lg">
+        <div id="mobile-menu" class="hidden flex-col items-center py-8 mt-10 space-y-6 bg-white left-6 right-6 drop-shadow-lg">
           <p>Logged as:
             <a class="hover:text-stone-500" href="/">John Doe</a>
           </p>
@@ -94,6 +104,11 @@
       <li class="font-bold underline"><a href="{{path('delete_id',{'id':1})}}">Удалить пост {'id':1}.</a></li>
     </ul>
   </h2> #}
+
+  {# footer #}
+  <footer class="flex items-center justify-center mt-12">
+    &copy; 2024 Блог на Symfony
+  </footer>
 
   {% endblock %}
 
