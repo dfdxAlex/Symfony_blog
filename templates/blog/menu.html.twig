@@ -51,6 +51,29 @@
               <a href="#">Регистрация</a>
           </div>
       </header>
+
+
+      {# mobile menu #}
+      {# md:hidden - спрятать меню на екранах md или больше #}
+      <div class="md:hidden">
+        {# flex-col items-center - выравнивание по горизонтали и вертикали #}
+        {# py-8 mt-10 space-y-6 bg-white left-6 right-6 drop-shadow-lg - различные стили для контента#}
+        {# hidden - вернуть в div #}
+        <div id="mobile-menu" class="hiden flex-col items-center py-8 mt-10 space-y-6 bg-white left-6 right-6 drop-shadow-lg">
+          <p>Logged as:
+            <a class="hover:text-stone-500" href="/">John Doe</a>
+          </p>
+          <form method="POST" action="/">
+            <button type="submit" class="tracking-widest hover:text-stone-500">
+              Logout
+            </button>
+          </form>
+          <a href="{{ path('add_post',{id:1}) }}" class="inline font-bold text-sm px-6 py-2 text-white rounded-full bg-red-500 hover:bg-red-600">
+            New blog post</a>
+          <a class="tracking-widest hover:text-stone-500" href="/">Login</a>
+          <a class="tracking-widest hover:text-stone-500" href="/">Register</a>
+        </div>
+      </div>
   </div>
 
 
