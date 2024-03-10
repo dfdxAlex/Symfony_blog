@@ -64,16 +64,33 @@
               <div class="w-8 h-0.5 bg-gray-600"></div>
           </div>
 
-
+          {# links #}
           {# hidden - спрятать блок #}
           {# md:flex - на экранах меньше чем md #}
           {# space-x-6 - добавить отступы между элементами #}
           {# text-lg - сделать текст большим относительно текста по умолчанию #}
           <div class="hidden md:flex space-x-6 text-lg">
-              <a href="#">Вошли как Alex</a>
-              <a href="{{path('add_post',{id:1})}}">Создать пост</a>
-              <a href="#">Вход</a>
-              <a href="#">Регистрация</a>
+              {# При наведении меняется цвет #}
+              <a  class="hover:text-stone-500" href="/">Привет Alex</a>
+              <a href="{{path('add_post',{id:1})}}"  
+                 class="inline       {# строчный контейнер#}
+                        font-bold 
+                        text-sm      {#Размер текста#}
+                        px-6         {#педдинг х#}
+                        py-2         {#педдинг у#}
+                        text-white 
+                        rounded-full {#круглые углы#}
+                        bg-red-500 
+                        hover:bg-red-600"
+              >Новый пост</a>
+              <form method="POST" action="/">
+                {# class="tracking-widest - межсимвольный интервал #}
+                <button type="submit" class="tracking-widest hover:text-stone-500">
+                  Выход
+                </button>
+              </form>
+              <a class="tracking-widest hover:text-stone-500" href="/">Вход</a>
+              <a class="tracking-widest hover:text-stone-500" href="/">Регистрация</a>
           </div>
       </header>
 
