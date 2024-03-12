@@ -71,7 +71,7 @@
           {# text-lg - сделать текст большим относительно текста по умолчанию #}
           <div class="hidden md:flex space-x-6 text-lg">
               {# При наведении меняется цвет #}
-              <a  class="hover:text-stone-500" href="/">Привет Alex</a>
+              <a  class="hover:text-stone-500 px-4" href="/">Привет Alex</a>
               <a href="{{path('add_post',{id:1})}}"  
                  class="inline       {# строчный контейнер#}
                         font-bold 
@@ -118,7 +118,28 @@
       </div>
   </div>
 
+      {# latest posts #}
+      <div class="my-14 px-6">
+        <h1 class="text-6xl tracking-tighter font-bold mb-6">Последний пост
+        </h1>
+        <p class="mb-8 text-gray-500">Блог на Symfony и Tailwind CSS
+        </p>
+        <hr/>
+      </div>
 
+      {# posts #}
+      <div class="my-14 flex flex-col md:flex-row px-6">
+        <p class="mb-8 text-gray-500 mr-20">12/03/2024</p>
+        <div class="space-y-4">
+          <h1 class="text-3xl font-bold tracking-tighter">Название поста</h1>
+          <p class="text-gray-500">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis laudantium
+                        similique excepturi quisquam. Nam vitae voluptatem consequatur architecto error quam!</p>
+          <p>
+            <a class="text-red-500 hover:text-red-900 mt-8" href="/">Читать дальше</a>
+          </p>
+        </div>
+      </div>
+      <hr/>
 
 
   {# <h1 class="text-5xl font-bold underline">
