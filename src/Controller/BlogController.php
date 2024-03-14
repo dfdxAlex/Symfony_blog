@@ -14,7 +14,12 @@ class BlogController extends AbstractController
     public function menu()
     {
         return $this->render('blog/menu.html.twig');
-        // return $this->render('base.html.twig');
+    }
+
+    #[Route('/vievBlog', name: 'vievBlog')]
+    public function vievBlog()
+    {
+        return $this->render('blog/VievBlog.html.twig');
     }
 
     #[Route('/all', name: 'all_news')]
