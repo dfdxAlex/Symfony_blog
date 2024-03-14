@@ -11,4 +11,23 @@
 
 Чтобы защититься от паразитов, слоны нередко обливаются жидкой грязью. Засохшая грязевая корочка служит хорошей защитой от насекомых и способствует заживлению ранок на коже.
   </p>
+
+  <div class="flex mt-10">
+
+    Вы подписаны:&nbsp;
+    <a class="text-green-500 hover:text-green-700" 
+       href="{{path('vievBlog')}}"
+    >
+       Alex
+    </a>
+
+    <a href="{{ path('toogleFollowStatus_id',{'id':1}) }}" 
+       class="ml-3 inline font-bold text-sm px-6 py-2
+          text-white rounded
+          bg-blue-500
+          hover:bg-blue-600">
+        Подписаться на автора сообщения.
+    </a>
+
+</div>
 {% endblock %}
